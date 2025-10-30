@@ -1,5 +1,5 @@
 CC = clang
-CFLAGS = -Wall -Wvla -Werror -gdwarf-4
+CFLAGS = -Wall -Wvla -Werror -gdwarf-4 -Iinclude
 
 ########################################################################
 
