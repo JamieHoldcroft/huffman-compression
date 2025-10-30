@@ -16,17 +16,14 @@ nosan: all
 ########################################################################
 
 .PHONY: all
-all: encode decode testCounter
+all: encode decode
 
-encode: encode.c huffman.c Counter.c File.c
-	$(CC) $(CFLAGS) -o encode encode.c huffman.c Counter.c File.c
+encode: src/encode.c src/huffman.c src/Counter.c src/File.c
+	$(CC) $(CFLAGS) -o encode src/encode.c src/huffman.c src/Counter.c src/File.c
 
-decode: decode.c huffman.c Counter.c File.c
-	$(CC) $(CFLAGS) -o decode decode.c huffman.c Counter.c File.c 
-
-testCounter: testCounter.c Counter.c
-	$(CC) $(CFLAGS) -o testCounter testCounter.c Counter.c
+decode: src/decode.c src/huffman.c src/Counter.c src/File.c
+	$(CC) $(CFLAGS) -o decode src/decode.c src/huffman.c src/Counter.c src/File.c 
 
 .PHONY: clean
 clean:
-	rm -f encode decode testCounter
+	rm -f encode decode
